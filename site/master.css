@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(22, 15, 41);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    flex: 1;
+    color: rgb(36, 106, 115);
+    padding-top: 20%;
+    text-align: center;
+    padding-bottom: 5%;
+  }
+
+h1 {
+    position: relative;
+    color: #827191;
+}
+
+h1::before {
+    /* temporary code to make the circle where the profile picture is gonna be */
+    content: '';
+    position: absolute;
+    top: -135px; /* Adjust the vertical position of the circle */
+    left: 50%; /* Center the circle horizontally */
+    transform: translateX(-50%);
+    width: 120px; /* Adjust the size of the circle */
+    height: 120px;
+    background-color: #827191; /* Adjust the color of the circle */
+    border-radius: 50%;
+    border: 2px solid #827191;
+    background-image: url('foto perfil.jpg');
+    background-size: cover; /* Ensure the image covers the entire circle */
+}
+
+h2 {
+    color: #827191;
+}
+
+section {
+    padding-bottom: 15%;
+}
+h3 {
+    font-size: small;
+    text-align: left;
+    padding: 10 px;
+    padding-left: 5%; 
+    padding-top: 5%;
+}
+
+footer {
+    background-color: #246A73;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #D7D9B1;
+    font-weight: bold;
+}
