@@ -1,19 +1,18 @@
-<!dOcTyPe html5>
+<!doctype html5>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Gonçalo Lourenço Software Dev</title>
 	<link rel="stylesheet" href="master.css">
+	<link rel="stylesheet" href="contact.css">
+	<link rel="stylesheet" href="slideshow.css">
 </head>
 
 <body>
-	<title>Gonçalo Lourenço Portfolio</title>
 	<main>
 		<section id="home">
 			<h1>Hi, I'm Gonçalo Lourenço</h1>
-	
 			<h2>Software Developer ; Surf Coach</h2>
-			
         </section>
 
         <section id="about">
@@ -24,6 +23,34 @@
 				<p>Despite my technical background, I embarked on a unique journey, exploring different facets of life. This journey led me to become a surf instructor, a role I embraced for two fulfilling seasons.</p>
 				<p>I'm excited to bring my diverse skill set to new challenges and opportunities in the world of software development.</p>
 				<p>Now, armed with a blend of technical expertise and soft skills cultivated through my varied experiences, I've decided to pivot back to my roots as a software developer. </p>
+
+				<div class="slideshow-container">
+					<div class="mySlides fade">
+						<img src="pictures/AulaEquipaDoMuseu.jpeg" alt="Image 1">
+					    <div class="label">After surf picture, team-building for Museu da Batata Doce</div>
+					</div>
+				
+					<div class="mySlides fade">
+						<img src="pictures/DesenhoDumaAluna.jpeg" alt="Image 2">
+						<div class="label">Drawing made by one of my surf clients</div>
+					</div>
+
+					<div class="mySlides fade">
+						<img src="pictures/Equipa SurfSeixeAcademy 2023.jpeg" alt="Image 3">
+						<div class="label">All members of the 2023 SurfSeixeAcademy team</div>
+					</div>
+				
+						<!-- Add more slides as needed -->
+				
+						<!-- Navigation dots -->
+					<div style="text-align:center; margin-top: 50px;">
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
+
+					</div>
+				</div>
+				
 			</h3>
         </section>
 
@@ -34,7 +61,25 @@
 
         <section id="contact">
             <h2>Contact Section</h2>
-            <!-- Contact section content -->
+			<p>If you'd like to get in touch, feel free to contact me:</p>
+            <address>
+                Email: <a href="mailto:gmclourenco@gmail.com">gmclourenco@gmail.com</a><br>
+                Phone: +351911752818
+            </address>
+
+            <p>Or use the form below:</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
         </section>
 	
 	
@@ -43,15 +88,61 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#top">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </footer>
 
+    </footer>
+	<script>
+		var slideIndex = 0;
+		var slideshowTimeout;
+		var manualTransition = false;
+	
+		showSlides();
+	
+		function showSlides() {
+			var slides = document.getElementsByClassName("mySlides");
+	
+			for (var i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+				slides[i].style.opacity = 0;
+			}
+	
+			slideIndex++;
+			if (slideIndex > slides.length) {
+				slideIndex = 1;
+			}
+	
+			slides[slideIndex - 1].style.display = "block";
+			slides[slideIndex - 1].style.opacity = 1;
+	
+			// Adjust the timeout based on whether it's a manual transition or not
+			var timeoutDuration = manualTransition ? 10000 : 5000;
+	
+			slideshowTimeout = setTimeout(function () {
+				if (!manualTransition) {
+					showSlides();
+				}
+			}, timeoutDuration);
+		}
+	
+		function currentSlide(n) {
+			clearTimeout(slideshowTimeout);
+			manualTransition = true;
+	
+			// Pause for 10 seconds when a dot is clicked
+			setTimeout(function () {
+				manualTransition = false;
+				showSlides();
+			}, 10000);
+	
+			slideIndex = n - 1;
+			showSlides();
+		}
+	</script>
+	
 </body>
 </html>
-
-
