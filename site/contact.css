@@ -1,0 +1,59 @@
+/* Add the styles for the contact page here */
+
+#contact {
+    padding: 20px;
+    text-align: center;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #827191;
+}
+
+/* Make the Name and Email fields inline */
+label[for="name"],
+label[for="email"] {
+    display: inline-block;
+    width: 48%;
+    margin-right: 4%;
+}
+
+/* Ensure Message field takes full width */
+label[for="message"] {
+    display: block;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #246A73;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #827191;
+}
